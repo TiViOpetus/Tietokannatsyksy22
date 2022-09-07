@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>Harjoitus3</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="PG Harjoitus3" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/harjoitus3" />
+   <property key="UID" value="postgres" />
+   <property key="PWD" value="Q2werty" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+  <data-source id="DS4">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="PG Harjoitus2" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/harjoitus2" />
+   <property key="UID" value="postgres" />
+   <property key="PWD" value="Q2werty" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="67a7ec90-4c27-49a6-9f25-592109fd6548" dbcs-ref="DS2" name="PG Harjoitus3" physicalName="PG Harjoitus3" >
+   <catalog id="CAT1" populated="true" UUID="c825e474-54da-4f8f-8af3-7d2658475692" name="harjoitus3" nativeTerm="database" physicalName="harjoitus3" >
+    <schema id="SCH2" populated="false" UUID="da3c67fe-cd00-427a-b3fb-b6087a99f39b" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH3" populated="false" UUID="a54c62aa-f3b7-4a9f-8b38-fddadd1da58c" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH4" populated="true" UUID="8eb783f9-19db-451a-adc8-a413284f4dae" name="public" nativeTerm="schema" physicalName="public" >
+    </schema>
+   </catalog>
+   <relationships>
+   </relationships>
+  </database>
+  <database id="DB5" populated="true" UUID="c81f4610-e6b0-485d-91cb-9a6306042c38" dbcs-ref="DS4" name="PG Harjoitus2" physicalName="PG Harjoitus2" >
+   <catalog id="CAT6" populated="true" UUID="87b399b8-a957-4426-9549-3d35fec109b7" name="harjoitus2" nativeTerm="database" physicalName="harjoitus2" >
+    <schema id="SCH7" populated="false" UUID="bd01d5a6-a97e-49bd-bb99-e2a599653f79" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH8" populated="false" UUID="7836fab0-7055-4d2c-99eb-1074b1275a6e" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH9" populated="true" UUID="5c667de9-83c7-46aa-96bd-2e8205086454" name="public" nativeTerm="schema" physicalName="public" >
+     <table id="TAB10" populated="false" UUID="873e66e7-d408-4a2b-96b4-ef1871981077" name="henkilo" objectType="TABLE" physicalName="henkilo" >
+      <remarks></remarks>
+      <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL11" populated="true" UUID="a19e0497-62c1-4cb5-887f-b0240a1faa54" autoIncrement="false" defaultValue="" name="opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL12" populated="true" UUID="66120612-1da6-4d17-a72b-b794de64c944" autoIncrement="false" defaultValue="" name="etunimi" nullable="0" physicalName="etunimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL13" populated="true" UUID="3ca6c9f0-fcba-4129-9668-50ffaa7ec50b" autoIncrement="false" defaultValue="" name="sukunimi" nullable="0" physicalName="sukunimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB103" populated="false" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB102" populated="false" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB104" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX14" populated="true" UUID="e1d6e79d-6425-45bb-a0cb-1e8506f06636" clustered="false" name="henkilo_pk" physicalName="henkilo_pk" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC15" populated="true" UUID="bdec0291-ede5-4400-9807-1eb34f3c75f0" ascendingOrDescending="UNSPECIFIED" column-ref="COL11" name="opiskelijanumero" physicalName="opiskelijanumero" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB16" populated="false" UUID="6f764cd5-dfe2-4670-b8e5-b03233663354" name="osoitetyyppi" objectType="TABLE" physicalName="osoitetyyppi" >
+      <remarks></remarks>
+      <folder id="FOLTAB161" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL17" populated="true" UUID="593b83e2-6660-450e-a821-ffe180323f57" autoIncrement="true" defaultValue="nextval(&apos;osoitetyyppi_tyyppikoodi_seq_1&apos;::regclass)" name="tyyppikoodi" nullable="0" physicalName="tyyppikoodi" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL18" populated="true" UUID="02fe75ba-9cc1-4b91-9ba4-9dd96cf028ee" autoIncrement="false" defaultValue="" name="tyyppinimitys" nullable="0" physicalName="tyyppinimitys" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB163" populated="false" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB162" populated="false" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB164" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX19" populated="true" UUID="8f26c7c6-a234-42ce-a601-9bb18530108a" clustered="false" name="osoitetyyppi_pk" physicalName="osoitetyyppi_pk" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC20" populated="true" UUID="05bae81a-6dc5-4a88-a2b1-e40d9ca4b985" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="tyyppikoodi" physicalName="tyyppikoodi" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB21" populated="false" UUID="42ce1d01-70ee-47b2-aadc-435b4431a2b9" name="sahkoposti" objectType="TABLE" physicalName="sahkoposti" >
+      <remarks></remarks>
+      <folder id="FOLTAB211" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL22" populated="true" UUID="c955cfed-5736-4446-8c25-c11e3d908cce" autoIncrement="false" defaultValue="" name="osoite" nullable="0" physicalName="osoite" precision="100" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL23" populated="true" UUID="7411c3ea-5117-44bf-8d3a-abd911eaa4b8" autoIncrement="false" defaultValue="" name="opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL24" populated="true" UUID="76d2ce79-8624-4ee4-beca-e83521694c4b" autoIncrement="false" defaultValue="" name="tyyppikoodi" nullable="0" physicalName="tyyppikoodi" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB213" populated="false" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB212" populated="false" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB214" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX25" populated="true" UUID="aece0613-e1fd-4ec8-8775-369c19a922a1" clustered="false" name="sahkoposti_pk" physicalName="sahkoposti_pk" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC26" populated="true" UUID="8f9828e1-37fa-4f59-b556-10e9343ed4e9" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="osoite" physicalName="osoite" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+   </catalog>
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB28" populated="true" UUID="0e8aca9f-99b3-4738-ba78-a4aba1c629a5" name="Ryhmä" objectType="TABLE" physicalName="ryhma" >
+   <remarks></remarks>
+   <folder id="FOLTAB281" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL29" populated="true" UUID="e0173e16-4578-4d58-a7db-445398c76739" autoIncrement="false" autoIncrementSequenceName="ryhma_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="30" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL30" populated="true" UUID="20f534c6-443c-465d-87ed-632c41ce3ed6" autoIncrement="false" autoIncrementSequenceName="ryhma_vastuuopettaja_seq" defaultValue="" name="Vastuuopettaja" nullable="0" physicalName="vastuuopettaja" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB283" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB282" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB284" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX31" populated="true" UUID="12c3e105-a773-429b-92e9-2d35fc947c61" clustered="false" name="ryhma_pk" physicalName="ryhma_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC32" populated="true" UUID="bfbc7757-c32e-4371-b2c6-0623cd7550db" ascendingOrDescending="UNSPECIFIED" column-ref="COL29" name="Nimi" physicalName="nimi" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB33" populated="true" UUID="518f6f01-e8d6-4d50-bdbc-b3cdeb4b73b5" name="Opiskelija" objectType="TABLE" physicalName="opiskelija" >
+   <remarks></remarks>
+   <folder id="FOLTAB331" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL34" populated="true" UUID="0092f3ad-3100-45ee-8ed1-ef58b7b07e20" autoIncrement="false" autoIncrementSequenceName="opiskelija_opiskelijanumero_seq" defaultValue="" name="Opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL35" populated="true" UUID="cc21ad47-df95-4fb2-b61c-5119f4895257" autoIncrement="false" autoIncrementSequenceName="ryhma_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL36" populated="true" UUID="35fe01b9-c720-40ff-96fd-3effce688d26" autoIncrement="false" autoIncrementSequenceName="opiskelija_etunimi_seq" defaultValue="" name="Etunimi" nullable="0" physicalName="etunimi" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL37" populated="true" UUID="56f95254-a30e-403e-bc31-35a6ce598ca2" autoIncrement="false" autoIncrementSequenceName="opiskelija_sukunimi_seq" defaultValue="" name="Sukunimi" nullable="0" physicalName="sukunimi" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL38" populated="true" UUID="87d56b44-0472-4a11-8f0c-3bb82bc75004" autoIncrement="false" autoIncrementSequenceName="opiskelija_puhelin_seq" defaultValue="" name="Puhelin" nullable="1" physicalName="puhelin" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="37c055f5-3188-4604-9663-ef910a787433" autoIncrement="false" autoIncrementSequenceName="opiskelija_sahkoposti_seq" defaultValue="" name="Sähköposti" nullable="1" physicalName="sahkoposti" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="eea0f541-c064-4ec0-942b-0a72608ddf65" autoIncrement="false" autoIncrementSequenceName="opiskelija_postinumero_seq" defaultValue="" name="Postinumero" nullable="0" physicalName="postinumero" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL41" populated="true" UUID="5c6882ce-ff29-4a04-a653-9a4fdbd44dbe" autoIncrement="false" autoIncrementSequenceName="opiskelija_postitoimipaikka_seq" defaultValue="" name="Postitoimipaikka" nullable="0" physicalName="postitoimipaikka" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL42" populated="true" UUID="66d130f1-0b5d-4c2d-a20c-f8cc02d5ce00" autoIncrement="false" autoIncrementSequenceName="opiskelija_jakeluosoite_seq" defaultValue="" name="Jakeluosoite" nullable="0" physicalName="jakeluosoite" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL43" populated="true" UUID="1e17d4a5-8942-4f7d-af31-8d8237118751" autoIncrement="false" autoIncrementSequenceName="opiskelija_valokuva_seq" defaultValue="" name="Valokuva" nullable="1" physicalName="valokuva" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2004" userDefinedTypeUUID="5c50e616-a448-40e1-abcd-5bfc04dcc607" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB333" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB332" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB334" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX44" populated="true" UUID="cb0aa40d-9669-41b3-a7a9-421e1a02e037" clustered="false" name="opiskelija_pk" physicalName="opiskelija_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC45" populated="true" UUID="290fea59-3967-4388-beea-bc6d73f908f2" ascendingOrDescending="UNSPECIFIED" column-ref="COL34" name="Opiskelijanumero" physicalName="opiskelijanumero" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB46" populated="true" UUID="c5b68c3a-cb6c-40cd-ba32-5bed38938c89" name="Tietokone" objectType="TABLE" physicalName="tietokone" >
+   <remarks></remarks>
+   <folder id="FOLTAB461" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL47" populated="true" UUID="0dca53de-5ef4-432c-bfcc-dc557281a6f3" autoIncrement="false" autoIncrementSequenceName="tietokone_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL48" populated="true" UUID="7755929f-7a53-410e-a987-2a3a4fbb76df" autoIncrement="false" autoIncrementSequenceName="malli_mallinimi_seq" defaultValue="" name="Mallinimi" nullable="0" physicalName="mallinimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB463" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX49" populated="true" UUID="3e7eb6b9-b4e8-4efa-957e-b2e6ae93a49a" clustered="false" name="tietokone_pk" physicalName="tietokone_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC50" populated="true" UUID="eb6d315e-b3da-484e-88a8-b6b6a1dc3ab4" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="Sarjanumero" physicalName="sarjanumero" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB51" populated="true" UUID="83348443-c579-4044-9195-15dca32a587f" name="Valmistaja" objectType="TABLE" physicalName="valmistaja" >
+   <remarks></remarks>
+   <folder id="FOLTAB511" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL52" populated="true" UUID="2def889b-fa02-4deb-a06f-48502a85f0cd" autoIncrement="true" autoIncrementSequenceName="valmistaja_valmistaja_id_seq" defaultValue="" name="ValmistajaID" nullable="0" physicalName="valmistaja_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL53" populated="true" UUID="86b17fad-5514-49b1-b2d9-03f192bcecab" autoIncrement="false" autoIncrementSequenceName="valmistaja_valmistajan_nimi_seq" defaultValue="" name="ValmistajanNimi" nullable="0" physicalName="valmistajan_nimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB513" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB512" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB514" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX54" populated="true" UUID="cf0e795f-d49b-4038-a015-a1b15eb04076" clustered="false" name="valmistaja_pk" physicalName="valmistaja_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC55" populated="true" UUID="cf889454-7e4b-422d-8389-468b2d7c9b82" ascendingOrDescending="UNSPECIFIED" column-ref="COL52" name="ValmistajaID" physicalName="valmistaja_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB56" populated="true" UUID="d893c25a-d816-4673-aed2-ee71141fdc08" name="Malli" objectType="TABLE" physicalName="malli" >
+   <remarks></remarks>
+   <folder id="FOLTAB561" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL57" populated="true" UUID="a4a674eb-b15e-4532-83d3-75cb52b88fc8" autoIncrement="false" autoIncrementSequenceName="malli_mallinimi_seq" defaultValue="" name="Mallinimi" nullable="0" physicalName="mallinimi" precision="30" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL58" populated="true" UUID="ad10b077-022b-4e57-8585-d0b7c1fd94c7" autoIncrement="false" autoIncrementSequenceName="valmistaja_valmistaja_id_seq" defaultValue="" name="ValmistajaID" nullable="0" physicalName="valmistaja_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL59" populated="true" UUID="94c82e33-c15a-403e-8682-c6e3330b4cf5" autoIncrement="false" autoIncrementSequenceName="malli_cpu_seq" defaultValue="" name="CPU" nullable="0" physicalName="cpu" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL60" populated="true" UUID="b76d8615-4ab7-4e6f-9a6f-c713f062b802" autoIncrement="false" autoIncrementSequenceName="malli_hdd_seq" defaultValue="" name="HDD" nullable="0" physicalName="hdd" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Amount in GB</remarks>
+    </column>
+    <column id="COL61" populated="true" UUID="7d55e173-f658-4f34-be55-f09b858ca4d4" autoIncrement="false" autoIncrementSequenceName="malli_ram_seq" defaultValue="" name="RAM" nullable="0" physicalName="ram" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Amount in GB</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB563" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB562" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB564" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX62" populated="true" UUID="1955de5a-70d0-49e2-a357-f65cbd244555" clustered="false" name="malli_pk" physicalName="malli_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC63" populated="true" UUID="e4f9dc48-73b3-4299-bba2-1eb55dc5585a" ascendingOrDescending="UNSPECIFIED" column-ref="COL57" name="Mallinimi" physicalName="mallinimi" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL64" populated="true" UUID="aceefd99-6f41-43a8-9ac1-25953ec18fcb" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="ryhma_opiskelija_fk" physicalName="ryhma_opiskelija_fk" pk-table-ref="TAB28" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP65" populated="true" UUID="615939b1-7bf3-413b-bc27-64451e5c3089" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL29" />
+   </relationship>
+   <relationship id="REL66" populated="true" UUID="7c73c50c-84f5-47f9-8ab3-17ee351c2bd1" deferrability="7" deleteRule="3" fk-table-ref="TAB56" fkCardinality="7" identifying="false" name="valmistaja_malli_fk" physicalName="valmistaja_malli_fk" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP67" populated="true" UUID="7fcb1803-2a0f-46fe-b48f-03ac8087a7bd" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+   </relationship>
+   <relationship id="REL68" populated="true" UUID="4ba36094-b519-4a79-8bf0-46d9499b709f" deferrability="7" deleteRule="3" fk-table-ref="TAB46" fkCardinality="7" identifying="false" name="malli_tietokone_fk" physicalName="malli_tietokone_fk" pk-table-ref="TAB56" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP69" populated="true" UUID="b186c648-abba-4950-bb46-b6c3d2d5f74a" fk-column-ref="COL48" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL57" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <compare-dm-settings  ddlGenerator="ca.sqlpower.architect.ddl.PostgresDDLGenerator"  outputFormatAsString="ENGLISH"  saveFlag="true" >
+  <source-stuff   datastoreTypeAsString="DATABASE"   connectName="PG Harjoitus2"   filePath=""  />
+  <target-stuff   datastoreTypeAsString="DATABASE"   connectName="PG Harjoitus3"   filePath=""  />
+  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ </compare-dm-settings>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB28" x="25" y="43" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB33" x="304" y="41" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB46" x="276" y="269" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB51" x="817" y="84" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB56" x="617" y="234" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL66" pkConnection="0.3875598086124402" fkConnection="0.6941747572815534" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL68" pkConnection="0.5353535353535354" fkConnection="0.40350877192982454" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL64" pkConnection="0.8245614035087719" fkConnection="0.3668639053254438" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  <table-profile-result ref-id="TAB21" createStartTime="1662536688522" createEndTime="1662536688735" exception="false" rowCount="0" UUID="1342243b-62db-4836-a816-0ec51f467248">
+   <column-profile-result ref-id="COL22" createStartTime="1662536688720" createEndTime="1662536688732" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="cb4eb435-35ac-4777-94ba-5e3b8960c353">
+   </column-profile-result>
+   <column-profile-result ref-id="COL23" createStartTime="1662536688732" createEndTime="1662536688733" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="99184c39-3a66-453e-9324-4f0dd2d9c0ec">
+   </column-profile-result>
+   <column-profile-result ref-id="COL24" createStartTime="1662536688733" createEndTime="1662536688735" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="f91b0682-c299-446b-be9c-8c08c9c9e589">
+   </column-profile-result>
+  </table-profile-result>
+  <table-profile-result ref-id="TAB16" createStartTime="1662536688737" createEndTime="1662536688761" exception="false" rowCount="0" UUID="3c4bed23-cb22-4e6d-862b-bc0ea18a12d4">
+   <column-profile-result ref-id="COL17" createStartTime="1662536688759" createEndTime="1662536688760" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="24ecba0d-1e11-42db-9bfc-980150acd74a">
+   </column-profile-result>
+   <column-profile-result ref-id="COL18" createStartTime="1662536688760" createEndTime="1662536688761" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="c8e3cb41-d990-44cf-be59-d934d2ac73b1">
+   </column-profile-result>
+  </table-profile-result>
+  <table-profile-result ref-id="TAB10" createStartTime="1662536688762" createEndTime="1662536688770" exception="false" rowCount="0" UUID="8bc1fea3-cec2-442a-8c64-9e6e19bf977a">
+   <column-profile-result ref-id="COL11" createStartTime="1662536688764" createEndTime="1662536688765" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="6cf4e147-3b92-404f-9d39-403d70573f30">
+   </column-profile-result>
+   <column-profile-result ref-id="COL12" createStartTime="1662536688766" createEndTime="1662536688768" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="9fa2f038-48e3-440c-b748-aea880670b42">
+   </column-profile-result>
+   <column-profile-result ref-id="COL13" createStartTime="1662536688768" createEndTime="1662536688769" exception="false" avgLength="0.0" minLength="0" maxLength="0" nullCount="0" distinctValueCount="0" UUID="e46bcb44-bac0-4947-8b4e-3ee41ca598be">
+   </column-profile-result>
+  </table-profile-result>
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
