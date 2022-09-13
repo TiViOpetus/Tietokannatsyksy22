@@ -125,7 +125,7 @@
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
   <table id="TAB28" populated="true" UUID="0e8aca9f-99b3-4738-ba78-a4aba1c629a5" name="Ryhmä" objectType="TABLE" physicalName="ryhma" >
-   <remarks></remarks>
+   <remarks>Table is for the UI to populate drop down list for Opiskelija window / tab</remarks>
    <folder id="FOLTAB281" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL29" populated="true" UUID="e0173e16-4578-4d58-a7db-445398c76739" autoIncrement="false" autoIncrementSequenceName="ryhma_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="30" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
@@ -145,12 +145,12 @@
    </folder>
   </table>
   <table id="TAB33" populated="true" UUID="518f6f01-e8d6-4d50-bdbc-b3cdeb4b73b5" name="Opiskelija" objectType="TABLE" physicalName="opiskelija" >
-   <remarks></remarks>
+   <remarks>Basic student information</remarks>
    <folder id="FOLTAB331" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL34" populated="true" UUID="0092f3ad-3100-45ee-8ed1-ef58b7b07e20" autoIncrement="false" autoIncrementSequenceName="opiskelija_opiskelijanumero_seq" defaultValue="" name="Opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL35" populated="true" UUID="cc21ad47-df95-4fb2-b61c-5119f4895257" autoIncrement="false" autoIncrementSequenceName="ryhma_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL35" populated="true" UUID="cc21ad47-df95-4fb2-b61c-5119f4895257" autoIncrement="false" autoIncrementSequenceName="opiskelija_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL36" populated="true" UUID="35fe01b9-c720-40ff-96fd-3effce688d26" autoIncrement="false" autoIncrementSequenceName="opiskelija_etunimi_seq" defaultValue="" name="Etunimi" nullable="0" physicalName="etunimi" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -194,7 +194,7 @@
     <column id="COL47" populated="true" UUID="0dca53de-5ef4-432c-bfcc-dc557281a6f3" autoIncrement="false" autoIncrementSequenceName="tietokone_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL48" populated="true" UUID="7755929f-7a53-410e-a987-2a3a4fbb76df" autoIncrement="false" autoIncrementSequenceName="malli_mallinimi_seq" defaultValue="" name="Mallinimi" nullable="0" physicalName="mallinimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL48" populated="true" UUID="7755929f-7a53-410e-a987-2a3a4fbb76df" autoIncrement="false" autoIncrementSequenceName="tietokone_mallinimi_seq" defaultValue="" name="Mallinimi" nullable="0" physicalName="mallinimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -209,7 +209,7 @@
    </folder>
   </table>
   <table id="TAB51" populated="true" UUID="83348443-c579-4044-9195-15dca32a587f" name="Valmistaja" objectType="TABLE" physicalName="valmistaja" >
-   <remarks></remarks>
+   <remarks>Table is intended to populate a drop down list in the UI</remarks>
    <folder id="FOLTAB511" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL52" populated="true" UUID="2def889b-fa02-4deb-a06f-48502a85f0cd" autoIncrement="true" autoIncrementSequenceName="valmistaja_valmistaja_id_seq" defaultValue="" name="ValmistajaID" nullable="0" physicalName="valmistaja_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
@@ -263,10 +263,10 @@
     <column id="COL65" populated="true" UUID="a7f4ae51-57c8-438e-a08c-5041c18b2cf0" autoIncrement="true" autoIncrementSequenceName="lainaus_lainausnumero_seq" defaultValue="" name="Lainausnumero" nullable="0" physicalName="lainausnumero" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL66" populated="true" UUID="a05ffcad-9639-4af8-a94f-d1a3273de0e7" autoIncrement="false" autoIncrementSequenceName="opiskelija_opiskelijanumero_seq" defaultValue="" name="Opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL66" populated="true" UUID="a05ffcad-9639-4af8-a94f-d1a3273de0e7" autoIncrement="false" autoIncrementSequenceName="lainaus_opiskelijanumero_seq" defaultValue="" name="Opiskelijanumero" nullable="0" physicalName="opiskelijanumero" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL67" populated="true" UUID="555b41b3-864e-4dcf-a59a-4b499cea5c65" autoIncrement="false" autoIncrementSequenceName="tietokone_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL67" populated="true" UUID="555b41b3-864e-4dcf-a59a-4b499cea5c65" autoIncrement="false" autoIncrementSequenceName="lainaus_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL68" populated="true" UUID="6d29bd22-6169-421b-acba-0f117796fc36" autoIncrement="false" autoIncrementSequenceName="lainaus_lainauspaiva_seq" defaultValue="" name="Lainauspäivä" nullable="0" physicalName="lainauspaiva" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -292,11 +292,11 @@
     <column id="COL73" populated="true" UUID="4fc0bcf3-1776-44ff-8226-febebe5c5803" autoIncrement="true" autoIncrementSequenceName="ram_paivitys_paivitys_id_seq" defaultValue="" name="PäivitysID" nullable="0" physicalName="paivitys_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL74" populated="true" UUID="cdd035a8-c4ce-4a06-a026-37e8859c4835" autoIncrement="false" autoIncrementSequenceName="tietokone_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL74" populated="true" UUID="cdd035a8-c4ce-4a06-a026-37e8859c4835" autoIncrement="false" autoIncrementSequenceName="ram_paivitys_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL75" populated="true" UUID="d3c8c7f4-a689-43ee-8135-29607a7072b9" autoIncrement="false" autoIncrementSequenceName="ram_paivitys_lisays_seq" defaultValue="" name="Lisäys" nullable="0" physicalName="lisays" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>Amount of RAM added in GB</remarks>
     </column>
     </folder>
     <folder id="FOLTAB723" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -315,7 +315,7 @@
     <column id="COL79" populated="true" UUID="dafe392a-21c6-411c-bdec-30e2f0069674" autoIncrement="true" autoIncrementSequenceName="levypaivitys_paivitys_id_seq" defaultValue="" name="PäivitysID" nullable="0" physicalName="paivitys_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL80" populated="true" UUID="a017cf05-8d11-4fba-b7bb-1fd5ba0b9736" autoIncrement="false" autoIncrementSequenceName="tietokone_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL80" populated="true" UUID="a017cf05-8d11-4fba-b7bb-1fd5ba0b9736" autoIncrement="false" autoIncrementSequenceName="levypaivitys_sarjanumero_seq" defaultValue="" name="Sarjanumero" nullable="0" physicalName="sarjanumero" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL81" populated="true" UUID="58f39e2a-6240-4cac-9b46-3ce5c1b1429e" autoIncrement="false" autoIncrementSequenceName="levypaivitys_lisays_seq" defaultValue="" name="Lisäys" nullable="0" physicalName="lisays" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
@@ -335,27 +335,76 @@
     </index>
    </folder>
   </table>
+  <table id="TAB85" populated="true" UUID="57506405-0e7d-4c95-b927-d8ba5a866ebd" name="Kortti" objectType="TABLE" physicalName="kortti" >
+   <remarks>Adapters added to the computer</remarks>
+   <folder id="FOLTAB851" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL86" populated="true" UUID="7a403e5d-4ac1-4fff-b449-5f01135fcd0d" autoIncrement="true" autoIncrementSequenceName="kortti_kortti_id_seq" defaultValue="" name="korttiID" nullable="0" physicalName="kortti_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL87" populated="true" UUID="eec03b3d-4d03-4d50-a306-2aa7a9ea8364" autoIncrement="false" autoIncrementSequenceName="kortti_valmistaja_id_seq" defaultValue="" name="ValmistajaID" nullable="0" physicalName="valmistaja_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL88" populated="true" UUID="c49abceb-d652-4c25-83df-785bb86c49b1" autoIncrement="false" autoIncrementSequenceName="korttityyppi_tyyppi_seq" defaultValue="" name="Tyyppi" nullable="0" physicalName="tyyppi" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL89" populated="true" UUID="61540a06-14b1-4acf-8954-575e13376210" autoIncrement="false" autoIncrementSequenceName="kortti_tuotenimi_seq" defaultValue="" name="Tuotenimi" nullable="0" physicalName="tuotenimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Product name of the adapter eg. Radeon 6300</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB853" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB852" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB854" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX90" populated="true" UUID="b28f31c7-8ee8-47c8-880f-00d05f1ac822" clustered="false" name="kortti_pk" physicalName="kortti_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC91" populated="true" UUID="68ca5ac7-a738-418b-a0f7-cc5bf40afc20" ascendingOrDescending="UNSPECIFIED" column-ref="COL86" name="korttiID" physicalName="kortti_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB92" populated="true" UUID="f33bc79d-13c8-403a-a476-1da29f37d5a7" name="Korttityyppi" objectType="TABLE" physicalName="korttityyppi" >
+   <remarks>For the UI drop down list</remarks>
+   <folder id="FOLTAB921" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL93" populated="true" UUID="5249efd3-becd-4306-bcc7-9f6c05ddbcea" autoIncrement="false" autoIncrementSequenceName="korttityyppi_tyyppi_seq" defaultValue="" name="Tyyppi" nullable="0" physicalName="tyyppi" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB923" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB922" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB924" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX94" populated="true" UUID="7d64ef7e-2275-4ced-bbcf-572cdb99199a" clustered="false" name="korttityyppi_pk" physicalName="korttityyppi_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC95" populated="true" UUID="474bb2bd-aff7-49a5-ab05-eca6f3c44906" ascendingOrDescending="UNSPECIFIED" column-ref="COL93" name="Tyyppi" physicalName="tyyppi" />
+    </index>
+   </folder>
+  </table>
   <relationships>
-   <relationship id="REL85" populated="true" UUID="aceefd99-6f41-43a8-9ac1-25953ec18fcb" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="ryhma_opiskelija_fk" physicalName="ryhma_opiskelija_fk" pk-table-ref="TAB28" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP86" populated="true" UUID="615939b1-7bf3-413b-bc27-64451e5c3089" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL29" />
+   <relationship id="REL96" populated="true" UUID="aceefd99-6f41-43a8-9ac1-25953ec18fcb" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="false" name="ryhma_opiskelija_fk" physicalName="ryhma_opiskelija_fk" pk-table-ref="TAB28" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP97" populated="true" UUID="615939b1-7bf3-413b-bc27-64451e5c3089" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL29" />
    </relationship>
-   <relationship id="REL87" populated="true" UUID="844ea963-0ef5-4a9c-9fd3-cbbad379ffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="opiskelija_lainaus_fk" physicalName="opiskelija_lainaus_fk" pk-table-ref="TAB33" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP88" populated="true" UUID="9b17a506-44a9-4ef8-a078-0ecbc621a7c8" fk-column-ref="COL66" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL34" />
+   <relationship id="REL98" populated="true" UUID="844ea963-0ef5-4a9c-9fd3-cbbad379ffb5" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="opiskelija_lainaus_fk" physicalName="opiskelija_lainaus_fk" pk-table-ref="TAB33" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP99" populated="true" UUID="9b17a506-44a9-4ef8-a078-0ecbc621a7c8" fk-column-ref="COL66" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL34" />
    </relationship>
-   <relationship id="REL89" populated="true" UUID="6ddeb3a5-bcb1-402e-9e5e-b077898bcdee" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="tietokone_lainaus_fk" physicalName="tietokone_lainaus_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP90" populated="true" UUID="ba9f6b27-bd46-4979-bb57-bc8a06ad76ec" fk-column-ref="COL67" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+   <relationship id="REL100" populated="true" UUID="6ddeb3a5-bcb1-402e-9e5e-b077898bcdee" deferrability="7" deleteRule="3" fk-table-ref="TAB64" fkCardinality="7" identifying="false" name="tietokone_lainaus_fk" physicalName="tietokone_lainaus_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP101" populated="true" UUID="ba9f6b27-bd46-4979-bb57-bc8a06ad76ec" fk-column-ref="COL67" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
    </relationship>
-   <relationship id="REL91" populated="true" UUID="2242b9d9-2076-4d34-90f9-4829c5dbea97" deferrability="7" deleteRule="3" fk-table-ref="TAB72" fkCardinality="7" identifying="false" name="tietokone_ram_paivitys_fk" physicalName="tietokone_ram_paivitys_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP92" populated="true" UUID="80c23450-a519-4e7b-9b97-2513510e20e0" fk-column-ref="COL74" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+   <relationship id="REL102" populated="true" UUID="2242b9d9-2076-4d34-90f9-4829c5dbea97" deferrability="7" deleteRule="3" fk-table-ref="TAB72" fkCardinality="7" identifying="false" name="tietokone_ram_paivitys_fk" physicalName="tietokone_ram_paivitys_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP103" populated="true" UUID="80c23450-a519-4e7b-9b97-2513510e20e0" fk-column-ref="COL74" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
    </relationship>
-   <relationship id="REL93" populated="true" UUID="cc122423-4a11-4215-97b1-2aff6a8c6cdf" deferrability="7" deleteRule="3" fk-table-ref="TAB78" fkCardinality="7" identifying="false" name="tietokone_levypaivitys_fk" physicalName="tietokone_levypaivitys_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP94" populated="true" UUID="4c2d0f67-39a0-4594-9b3e-97a40fce849a" fk-column-ref="COL80" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+   <relationship id="REL104" populated="true" UUID="cc122423-4a11-4215-97b1-2aff6a8c6cdf" deferrability="7" deleteRule="3" fk-table-ref="TAB78" fkCardinality="7" identifying="false" name="tietokone_levypaivitys_fk" physicalName="tietokone_levypaivitys_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP105" populated="true" UUID="4c2d0f67-39a0-4594-9b3e-97a40fce849a" fk-column-ref="COL80" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
    </relationship>
-   <relationship id="REL95" populated="true" UUID="7c73c50c-84f5-47f9-8ab3-17ee351c2bd1" deferrability="7" deleteRule="3" fk-table-ref="TAB56" fkCardinality="7" identifying="false" name="valmistaja_malli_fk" physicalName="valmistaja_malli_fk" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP96" populated="true" UUID="7fcb1803-2a0f-46fe-b48f-03ac8087a7bd" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+   <relationship id="REL106" populated="true" UUID="7c73c50c-84f5-47f9-8ab3-17ee351c2bd1" deferrability="7" deleteRule="3" fk-table-ref="TAB56" fkCardinality="7" identifying="false" name="valmistaja_malli_fk" physicalName="valmistaja_malli_fk" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP107" populated="true" UUID="7fcb1803-2a0f-46fe-b48f-03ac8087a7bd" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
    </relationship>
-   <relationship id="REL97" populated="true" UUID="4ba36094-b519-4a79-8bf0-46d9499b709f" deferrability="7" deleteRule="3" fk-table-ref="TAB46" fkCardinality="7" identifying="false" name="malli_tietokone_fk" physicalName="malli_tietokone_fk" pk-table-ref="TAB56" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP98" populated="true" UUID="b186c648-abba-4950-bb46-b6c3d2d5f74a" fk-column-ref="COL48" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL57" />
+   <relationship id="REL108" populated="true" UUID="ab5efcea-9668-4621-8ca2-8fb671badb6a" deferrability="7" deleteRule="3" fk-table-ref="TAB85" fkCardinality="7" identifying="false" name="valmistaja_kortti_fk" physicalName="valmistaja_kortti_fk" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP109" populated="true" UUID="937ad4d8-f416-4331-8d28-c228e2a1b26e" fk-column-ref="COL87" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+   </relationship>
+   <relationship id="REL110" populated="true" UUID="4ba36094-b519-4a79-8bf0-46d9499b709f" deferrability="7" deleteRule="3" fk-table-ref="TAB46" fkCardinality="7" identifying="false" name="malli_tietokone_fk" physicalName="malli_tietokone_fk" pk-table-ref="TAB56" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP111" populated="true" UUID="b186c648-abba-4950-bb46-b6c3d2d5f74a" fk-column-ref="COL48" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL57" />
+   </relationship>
+   <relationship id="REL112" populated="true" UUID="e0a79f7a-f585-43ef-8666-d1755f8e066c" deferrability="7" deleteRule="3" fk-table-ref="TAB85" fkCardinality="7" identifying="false" name="korttityyppi_kortti_fk" physicalName="korttityyppi_kortti_fk" pk-table-ref="TAB92" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP113" populated="true" UUID="3ae324a1-02b1-440a-aafd-bbd2c43abaae" fk-column-ref="COL88" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL93" />
    </relationship>
   </relationships>
  </target-database>
@@ -369,20 +418,24 @@
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB28" x="35" y="57" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB33" x="293" y="42" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB46" x="573" y="216" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB33" x="293" y="42" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB46" x="573" y="216" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB51" x="20" y="262" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB56" x="283" y="237" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB64" x="697" y="22" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB72" x="848" y="194" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB78" x="854" y="354" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL95" pkConnection="0.40350877192982454" fkConnection="0.48484848484848486" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL97" pkConnection="0.2828282828282828" fkConnection="0.8596491228070176" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL85" pkConnection="0.8245614035087719" fkConnection="0.3668639053254438" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL87" pkConnection="0.16568047337278108" fkConnection="0.47474747474747475" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL89" pkConnection="0.0" fkConnection="0.6363636363636364" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="40"/>
-  <table-link relationship-ref="REL91" pkConnection="0.43859649122807015" fkConnection="0.6619718309859155" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL93" pkConnection="0.7292576419213974" fkConnection="0.15283842794759825" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-pane table-ref="TAB64" x="697" y="22" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB72" x="848" y="194" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB78" x="854" y="354" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB85" x="583" y="428" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB92" x="243" y="498" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL106" pkConnection="0.40350877192982454" fkConnection="0.48484848484848486" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL110" pkConnection="0.2828282828282828" fkConnection="0.8596491228070176" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL96" pkConnection="0.8245614035087719" fkConnection="0.3668639053254438" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL98" pkConnection="0.15976331360946747" fkConnection="0.47474747474747475" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL100" pkConnection="0.0" fkConnection="0.6363636363636364" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="40"/>
+  <table-link relationship-ref="REL102" pkConnection="0.43859649122807015" fkConnection="0.6619718309859155" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL104" pkConnection="0.43859649122807015" fkConnection="0.5647058823529412" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL108" pkConnection="0.9521531100478469" fkConnection="0.5529411764705883" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="36"/>
+  <table-link relationship-ref="REL112" pkConnection="0.5813953488372093" fkConnection="0.7294117647058823" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
