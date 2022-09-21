@@ -1,0 +1,930 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.5
+-- Dumped by pg_dump version 14.5
+
+-- Started on 2022-09-21 13:32:45
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 217 (class 1259 OID 35628)
+-- Name: asennettu_kortti; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.asennettu_kortti (
+    asennus_id integer NOT NULL,
+    sarjanumero character varying(50) NOT NULL,
+    kortti_id integer NOT NULL
+);
+
+
+ALTER TABLE public.asennettu_kortti OWNER TO postgres;
+
+--
+-- TOC entry 216 (class 1259 OID 35627)
+-- Name: asennettu_kortti_asennus_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.asennettu_kortti_asennus_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.asennettu_kortti_asennus_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3428 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: asennettu_kortti_asennus_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.asennettu_kortti_asennus_id_seq OWNED BY public.asennettu_kortti.asennus_id;
+
+
+--
+-- TOC entry 228 (class 1259 OID 43797)
+-- Name: elakkeella; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.elakkeella (
+    nimi character varying(30) NOT NULL,
+    alkamispaiva date NOT NULL
+);
+
+
+ALTER TABLE public.elakkeella OWNER TO postgres;
+
+--
+-- TOC entry 213 (class 1259 OID 35611)
+-- Name: kortti; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.kortti (
+    kortti_id integer NOT NULL,
+    valmistaja_id integer NOT NULL,
+    tyyppi character varying(20) NOT NULL,
+    tuotenimi character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.kortti OWNER TO postgres;
+
+--
+-- TOC entry 3429 (class 0 OID 0)
+-- Dependencies: 213
+-- Name: TABLE kortti; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public.kortti IS 'Adapters added to the computer';
+
+
+--
+-- TOC entry 3430 (class 0 OID 0)
+-- Dependencies: 213
+-- Name: COLUMN kortti.tuotenimi; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.kortti.tuotenimi IS 'Product name of the adapter eg. Radeon 6300';
+
+
+--
+-- TOC entry 212 (class 1259 OID 35610)
+-- Name: kortti_kortti_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.kortti_kortti_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.kortti_kortti_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3431 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: kortti_kortti_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.kortti_kortti_id_seq OWNED BY public.kortti.kortti_id;
+
+
+--
+-- TOC entry 209 (class 1259 OID 35598)
+-- Name: korttityyppi; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.korttityyppi (
+    tyyppi character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.korttityyppi OWNER TO postgres;
+
+--
+-- TOC entry 3432 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: TABLE korttityyppi; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public.korttityyppi IS 'For the UI drop down list';
+
+
+--
+-- TOC entry 225 (class 1259 OID 35661)
+-- Name: lainaus; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.lainaus (
+    lainausnumero integer NOT NULL,
+    opiskelijanumero character varying(8) NOT NULL,
+    sarjanumero character varying(50) NOT NULL,
+    lainauspaiva date NOT NULL,
+    palautuspaiva date
+);
+
+
+ALTER TABLE public.lainaus OWNER TO postgres;
+
+--
+-- TOC entry 223 (class 1259 OID 35653)
+-- Name: opiskelija; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.opiskelija (
+    opiskelijanumero character varying(8) NOT NULL,
+    nimi character varying(30) NOT NULL,
+    etunimi character varying(20) NOT NULL,
+    sukunimi character varying(20) NOT NULL,
+    puhelin character varying(15),
+    sahkoposti character varying(50),
+    postinumero character varying(10) NOT NULL,
+    postitoimipaikka character varying(30) NOT NULL,
+    jakeluosoite character varying(30) NOT NULL,
+    valokuva bytea
+);
+
+
+ALTER TABLE public.opiskelija OWNER TO postgres;
+
+--
+-- TOC entry 3433 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: TABLE opiskelija; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public.opiskelija IS 'Basic student information';
+
+
+--
+-- TOC entry 215 (class 1259 OID 35622)
+-- Name: tietokone; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tietokone (
+    sarjanumero character varying(50) NOT NULL,
+    mallinimi character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.tietokone OWNER TO postgres;
+
+--
+-- TOC entry 226 (class 1259 OID 35852)
+-- Name: lainassa; Type: VIEW; Schema: public; Owner: postgres
+--
+
+CREATE VIEW public.lainassa AS
+ SELECT tietokone.sarjanumero,
+    tietokone.mallinimi,
+    opiskelija.sukunimi,
+    opiskelija.etunimi,
+    opiskelija.opiskelijanumero,
+    opiskelija.nimi AS "ryhmä"
+   FROM public.tietokone,
+    public.opiskelija,
+    public.lainaus
+  WHERE (((opiskelija.opiskelijanumero)::text = (lainaus.opiskelijanumero)::text) AND ((tietokone.sarjanumero)::text = (lainaus.sarjanumero)::text) AND (lainaus.palautuspaiva IS NULL));
+
+
+ALTER TABLE public.lainassa OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1259 OID 35660)
+-- Name: lainaus_lainausnumero_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.lainaus_lainausnumero_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.lainaus_lainausnumero_seq OWNER TO postgres;
+
+--
+-- TOC entry 3434 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: lainaus_lainausnumero_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.lainaus_lainausnumero_seq OWNED BY public.lainaus.lainausnumero;
+
+
+--
+-- TOC entry 219 (class 1259 OID 35635)
+-- Name: levypaivitys; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.levypaivitys (
+    paivitys_id integer NOT NULL,
+    sarjanumero character varying(50) NOT NULL,
+    lisays boolean NOT NULL,
+    levytila integer NOT NULL
+);
+
+
+ALTER TABLE public.levypaivitys OWNER TO postgres;
+
+--
+-- TOC entry 3435 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: COLUMN levypaivitys.lisays; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.levypaivitys.lisays IS 'True if more disks added, false when replaced with a new disk';
+
+
+--
+-- TOC entry 3436 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: COLUMN levypaivitys.levytila; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.levypaivitys.levytila IS 'Amount of storage space added or replaced in GB';
+
+
+--
+-- TOC entry 218 (class 1259 OID 35634)
+-- Name: levypaivitys_paivitys_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.levypaivitys_paivitys_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.levypaivitys_paivitys_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3437 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: levypaivitys_paivitys_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.levypaivitys_paivitys_id_seq OWNED BY public.levypaivitys.paivitys_id;
+
+
+--
+-- TOC entry 214 (class 1259 OID 35617)
+-- Name: malli; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.malli (
+    mallinimi character varying(30) NOT NULL,
+    valmistaja_id integer NOT NULL,
+    cpu character varying(20) NOT NULL,
+    hdd integer NOT NULL,
+    ram integer NOT NULL
+);
+
+
+ALTER TABLE public.malli OWNER TO postgres;
+
+--
+-- TOC entry 3438 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: COLUMN malli.hdd; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.malli.hdd IS 'Amount in GB';
+
+
+--
+-- TOC entry 3439 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: COLUMN malli.ram; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.malli.ram IS 'Amount in GB';
+
+
+--
+-- TOC entry 221 (class 1259 OID 35642)
+-- Name: ram_paivitys; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.ram_paivitys (
+    paivitys_id integer NOT NULL,
+    sarjanumero character varying(50) NOT NULL,
+    lisays integer NOT NULL
+);
+
+
+ALTER TABLE public.ram_paivitys OWNER TO postgres;
+
+--
+-- TOC entry 3440 (class 0 OID 0)
+-- Dependencies: 221
+-- Name: COLUMN ram_paivitys.lisays; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.ram_paivitys.lisays IS 'Amount of RAM added in GB';
+
+
+--
+-- TOC entry 220 (class 1259 OID 35641)
+-- Name: ram_paivitys_paivitys_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.ram_paivitys_paivitys_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.ram_paivitys_paivitys_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3441 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: ram_paivitys_paivitys_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.ram_paivitys_paivitys_id_seq OWNED BY public.ram_paivitys.paivitys_id;
+
+
+--
+-- TOC entry 222 (class 1259 OID 35648)
+-- Name: ryhma; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.ryhma (
+    nimi character varying(30) NOT NULL,
+    vastuuopettaja character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.ryhma OWNER TO postgres;
+
+--
+-- TOC entry 3442 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: TABLE ryhma; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public.ryhma IS 'Table is for the UI to populate drop down list for Opiskelija window / tab';
+
+
+--
+-- TOC entry 227 (class 1259 OID 43792)
+-- Name: toissa; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.toissa (
+    nimi character varying(30) NOT NULL,
+    alkamispaiva date NOT NULL
+);
+
+
+ALTER TABLE public.toissa OWNER TO postgres;
+
+--
+-- TOC entry 211 (class 1259 OID 35604)
+-- Name: valmistaja; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.valmistaja (
+    valmistaja_id integer NOT NULL,
+    valmistajan_nimi character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.valmistaja OWNER TO postgres;
+
+--
+-- TOC entry 3443 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: TABLE valmistaja; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public.valmistaja IS 'Table is intended to populate a drop down list in the UI';
+
+
+--
+-- TOC entry 210 (class 1259 OID 35603)
+-- Name: valmistaja_valmistaja_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.valmistaja_valmistaja_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.valmistaja_valmistaja_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3444 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: valmistaja_valmistaja_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.valmistaja_valmistaja_id_seq OWNED BY public.valmistaja.valmistaja_id;
+
+
+--
+-- TOC entry 3223 (class 2604 OID 35631)
+-- Name: asennettu_kortti asennus_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.asennettu_kortti ALTER COLUMN asennus_id SET DEFAULT nextval('public.asennettu_kortti_asennus_id_seq'::regclass);
+
+
+--
+-- TOC entry 3222 (class 2604 OID 35614)
+-- Name: kortti kortti_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.kortti ALTER COLUMN kortti_id SET DEFAULT nextval('public.kortti_kortti_id_seq'::regclass);
+
+
+--
+-- TOC entry 3226 (class 2604 OID 35664)
+-- Name: lainaus lainausnumero; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lainaus ALTER COLUMN lainausnumero SET DEFAULT nextval('public.lainaus_lainausnumero_seq'::regclass);
+
+
+--
+-- TOC entry 3224 (class 2604 OID 35638)
+-- Name: levypaivitys paivitys_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.levypaivitys ALTER COLUMN paivitys_id SET DEFAULT nextval('public.levypaivitys_paivitys_id_seq'::regclass);
+
+
+--
+-- TOC entry 3225 (class 2604 OID 35645)
+-- Name: ram_paivitys paivitys_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ram_paivitys ALTER COLUMN paivitys_id SET DEFAULT nextval('public.ram_paivitys_paivitys_id_seq'::regclass);
+
+
+--
+-- TOC entry 3221 (class 2604 OID 35607)
+-- Name: valmistaja valmistaja_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.valmistaja ALTER COLUMN valmistaja_id SET DEFAULT nextval('public.valmistaja_valmistaja_id_seq'::regclass);
+
+
+--
+-- TOC entry 3412 (class 0 OID 35628)
+-- Dependencies: 217
+-- Data for Name: asennettu_kortti; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3422 (class 0 OID 43797)
+-- Dependencies: 228
+-- Data for Name: elakkeella; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.elakkeella VALUES ('Erkki Esimerkki', '2022-05-06');
+INSERT INTO public.elakkeella VALUES ('Wiljam Nurmi', '2016-09-20');
+INSERT INTO public.elakkeella VALUES ('Uolevi Untosalo', '2014-07-10');
+
+
+--
+-- TOC entry 3408 (class 0 OID 35611)
+-- Dependencies: 213
+-- Data for Name: kortti; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3404 (class 0 OID 35598)
+-- Dependencies: 209
+-- Data for Name: korttityyppi; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.korttityyppi VALUES ('Näytönohjain');
+INSERT INTO public.korttityyppi VALUES ('Verkkokortti');
+INSERT INTO public.korttityyppi VALUES ('Äänikortti');
+
+
+--
+-- TOC entry 3420 (class 0 OID 35661)
+-- Dependencies: 225
+-- Data for Name: lainaus; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.lainaus VALUES (1, '55666', 'PC1R4X5H', '2022-09-14', NULL);
+INSERT INTO public.lainaus VALUES (2, '55669', 'A12345', '2022-08-05', '2022-09-01');
+INSERT INTO public.lainaus VALUES (3, '55668', 'PC1R4X6S', '2022-01-10', NULL);
+
+
+--
+-- TOC entry 3414 (class 0 OID 35635)
+-- Dependencies: 219
+-- Data for Name: levypaivitys; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3409 (class 0 OID 35617)
+-- Dependencies: 214
+-- Data for Name: malli; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.malli VALUES ('Thinkcentre M720g', 1, 'i7', 500, 16);
+INSERT INTO public.malli VALUES ('Z-book', 2, 'i7', 1000, 32);
+
+
+--
+-- TOC entry 3418 (class 0 OID 35653)
+-- Dependencies: 223
+-- Data for Name: opiskelija; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.opiskelija VALUES ('55666', 'Tivi20ka', 'Jakke', 'Jäynä', '044 1234 567', '55666@edu.raseko.fi', '21200', 'Raisio', 'Kotikatu 6', NULL);
+INSERT INTO public.opiskelija VALUES ('55667', 'Tivi20oa', 'Tuittu', 'Kiukkunen', '0400 654 7890', '55667@edu.raseko.fi', '23100', 'Mynämäki', 'Viertotie 5', NULL);
+INSERT INTO public.opiskelija VALUES ('55668', 'Tivi20oa', 'Assi', 'Kalma', '040 1258 744', '55668@edu.raseko.fi', '20100', 'Turku', 'Yliopistonkatu 2 A 11', NULL);
+INSERT INTO public.opiskelija VALUES ('55669', 'Tivi20ka', 'Jonne', 'Janttari', '050 512 5557', '55669@edu.raseko.fi', '21200', 'Raisio', 'Juhaninkuja 6', NULL);
+
+
+--
+-- TOC entry 3416 (class 0 OID 35642)
+-- Dependencies: 221
+-- Data for Name: ram_paivitys; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3417 (class 0 OID 35648)
+-- Dependencies: 222
+-- Data for Name: ryhma; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.ryhma VALUES ('Tivi20oa', 'Mika Vainio');
+INSERT INTO public.ryhma VALUES ('Tivi20ka', 'Mikko Viljanen');
+INSERT INTO public.ryhma VALUES ('Tivi23', 'Noora Nieminen');
+
+
+--
+-- TOC entry 3410 (class 0 OID 35622)
+-- Dependencies: 215
+-- Data for Name: tietokone; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tietokone VALUES ('PC1R4X6S', 'Thinkcentre M720g');
+INSERT INTO public.tietokone VALUES ('A12345', 'Z-book');
+INSERT INTO public.tietokone VALUES ('PC1R4X5H', 'Thinkcentre M720g');
+INSERT INTO public.tietokone VALUES ('PC1R4X6A', 'Thinkcentre M720g');
+
+
+--
+-- TOC entry 3421 (class 0 OID 43792)
+-- Dependencies: 227
+-- Data for Name: toissa; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.toissa VALUES ('Erkki Esimerkki', '1999-01-15');
+INSERT INTO public.toissa VALUES ('Mauri Möttönen', '2019-06-01');
+INSERT INTO public.toissa VALUES ('Tiina Tötterman', '2020-03-12');
+
+
+--
+-- TOC entry 3406 (class 0 OID 35604)
+-- Dependencies: 211
+-- Data for Name: valmistaja; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.valmistaja VALUES (1, 'Lenovo');
+INSERT INTO public.valmistaja VALUES (2, 'HP');
+
+
+--
+-- TOC entry 3445 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: asennettu_kortti_asennus_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.asennettu_kortti_asennus_id_seq', 1, false);
+
+
+--
+-- TOC entry 3446 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: kortti_kortti_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.kortti_kortti_id_seq', 1, false);
+
+
+--
+-- TOC entry 3447 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: lainaus_lainausnumero_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.lainaus_lainausnumero_seq', 3, true);
+
+
+--
+-- TOC entry 3448 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: levypaivitys_paivitys_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.levypaivitys_paivitys_id_seq', 1, false);
+
+
+--
+-- TOC entry 3449 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: ram_paivitys_paivitys_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.ram_paivitys_paivitys_id_seq', 1, false);
+
+
+--
+-- TOC entry 3450 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: valmistaja_valmistaja_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.valmistaja_valmistaja_id_seq', 2, true);
+
+
+--
+-- TOC entry 3252 (class 2606 OID 43801)
+-- Name: elakkeella PK_elakkeella; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.elakkeella
+    ADD CONSTRAINT "PK_elakkeella" PRIMARY KEY (nimi);
+
+
+--
+-- TOC entry 3250 (class 2606 OID 43796)
+-- Name: toissa PK_toissa; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.toissa
+    ADD CONSTRAINT "PK_toissa" PRIMARY KEY (nimi);
+
+
+--
+-- TOC entry 3238 (class 2606 OID 35633)
+-- Name: asennettu_kortti asennettu_kortti_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.asennettu_kortti
+    ADD CONSTRAINT asennettu_kortti_pk PRIMARY KEY (asennus_id);
+
+
+--
+-- TOC entry 3232 (class 2606 OID 35616)
+-- Name: kortti kortti_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.kortti
+    ADD CONSTRAINT kortti_pk PRIMARY KEY (kortti_id);
+
+
+--
+-- TOC entry 3228 (class 2606 OID 35602)
+-- Name: korttityyppi korttityyppi_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.korttityyppi
+    ADD CONSTRAINT korttityyppi_pk PRIMARY KEY (tyyppi);
+
+
+--
+-- TOC entry 3248 (class 2606 OID 35666)
+-- Name: lainaus lainaus_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lainaus
+    ADD CONSTRAINT lainaus_pk PRIMARY KEY (lainausnumero);
+
+
+--
+-- TOC entry 3240 (class 2606 OID 35640)
+-- Name: levypaivitys levypaivitys_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.levypaivitys
+    ADD CONSTRAINT levypaivitys_pk PRIMARY KEY (paivitys_id);
+
+
+--
+-- TOC entry 3234 (class 2606 OID 35621)
+-- Name: malli malli_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.malli
+    ADD CONSTRAINT malli_pk PRIMARY KEY (mallinimi);
+
+
+--
+-- TOC entry 3246 (class 2606 OID 35659)
+-- Name: opiskelija opiskelija_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.opiskelija
+    ADD CONSTRAINT opiskelija_pk PRIMARY KEY (opiskelijanumero);
+
+
+--
+-- TOC entry 3242 (class 2606 OID 35647)
+-- Name: ram_paivitys ram_paivitys_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ram_paivitys
+    ADD CONSTRAINT ram_paivitys_pk PRIMARY KEY (paivitys_id);
+
+
+--
+-- TOC entry 3244 (class 2606 OID 35652)
+-- Name: ryhma ryhma_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ryhma
+    ADD CONSTRAINT ryhma_pk PRIMARY KEY (nimi);
+
+
+--
+-- TOC entry 3236 (class 2606 OID 35626)
+-- Name: tietokone tietokone_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tietokone
+    ADD CONSTRAINT tietokone_pk PRIMARY KEY (sarjanumero);
+
+
+--
+-- TOC entry 3230 (class 2606 OID 35609)
+-- Name: valmistaja valmistaja_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.valmistaja
+    ADD CONSTRAINT valmistaja_pk PRIMARY KEY (valmistaja_id);
+
+
+--
+-- TOC entry 3257 (class 2606 OID 35682)
+-- Name: asennettu_kortti kortti_asennettu_kortti_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.asennettu_kortti
+    ADD CONSTRAINT kortti_asennettu_kortti_fk FOREIGN KEY (kortti_id) REFERENCES public.kortti(kortti_id);
+
+
+--
+-- TOC entry 3253 (class 2606 OID 35667)
+-- Name: kortti korttityyppi_kortti_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.kortti
+    ADD CONSTRAINT korttityyppi_kortti_fk FOREIGN KEY (tyyppi) REFERENCES public.korttityyppi(tyyppi);
+
+
+--
+-- TOC entry 3256 (class 2606 OID 35687)
+-- Name: tietokone malli_tietokone_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tietokone
+    ADD CONSTRAINT malli_tietokone_fk FOREIGN KEY (mallinimi) REFERENCES public.malli(mallinimi);
+
+
+--
+-- TOC entry 3263 (class 2606 OID 35717)
+-- Name: lainaus opiskelija_lainaus_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lainaus
+    ADD CONSTRAINT opiskelija_lainaus_fk FOREIGN KEY (opiskelijanumero) REFERENCES public.opiskelija(opiskelijanumero);
+
+
+--
+-- TOC entry 3261 (class 2606 OID 35712)
+-- Name: opiskelija ryhma_opiskelija_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.opiskelija
+    ADD CONSTRAINT ryhma_opiskelija_fk FOREIGN KEY (nimi) REFERENCES public.ryhma(nimi);
+
+
+--
+-- TOC entry 3258 (class 2606 OID 35707)
+-- Name: asennettu_kortti tietokone_asennettu_kortti_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.asennettu_kortti
+    ADD CONSTRAINT tietokone_asennettu_kortti_fk FOREIGN KEY (sarjanumero) REFERENCES public.tietokone(sarjanumero);
+
+
+--
+-- TOC entry 3262 (class 2606 OID 35692)
+-- Name: lainaus tietokone_lainaus_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lainaus
+    ADD CONSTRAINT tietokone_lainaus_fk FOREIGN KEY (sarjanumero) REFERENCES public.tietokone(sarjanumero);
+
+
+--
+-- TOC entry 3259 (class 2606 OID 35702)
+-- Name: levypaivitys tietokone_levypaivitys_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.levypaivitys
+    ADD CONSTRAINT tietokone_levypaivitys_fk FOREIGN KEY (sarjanumero) REFERENCES public.tietokone(sarjanumero);
+
+
+--
+-- TOC entry 3260 (class 2606 OID 35697)
+-- Name: ram_paivitys tietokone_ram_paivitys_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.ram_paivitys
+    ADD CONSTRAINT tietokone_ram_paivitys_fk FOREIGN KEY (sarjanumero) REFERENCES public.tietokone(sarjanumero);
+
+
+--
+-- TOC entry 3254 (class 2606 OID 35677)
+-- Name: kortti valmistaja_kortti_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.kortti
+    ADD CONSTRAINT valmistaja_kortti_fk FOREIGN KEY (valmistaja_id) REFERENCES public.valmistaja(valmistaja_id);
+
+
+--
+-- TOC entry 3255 (class 2606 OID 35672)
+-- Name: malli valmistaja_malli_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.malli
+    ADD CONSTRAINT valmistaja_malli_fk FOREIGN KEY (valmistaja_id) REFERENCES public.valmistaja(valmistaja_id);
+
+
+-- Completed on 2022-09-21 13:32:46
+
+--
+-- PostgreSQL database dump complete
+--
+
